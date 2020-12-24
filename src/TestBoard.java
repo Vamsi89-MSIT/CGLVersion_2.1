@@ -1,49 +1,80 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 /**
  * 
  */
 
 /**
- * @author vk199
+ * @author Vamsi
  *
  */
-public class TestBoard 
-{
-	public void testboard()
-	{
-		int[][] arrayint = new[8][4];
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
-		arrayint[0][0] = 1;
+class TestBoard {
+	public void test_create_board(){
 		
-		Board b = new Board(8, arrayint);
-		public void testcreateboard()
-		{
-			
-		}
-		public void testprintboard()
-		{
-			
-		}
-		Board z = new Board();
-		public void testcount()
-		{
-			System.out.print("----TEST ONE EXECUTED----");
-			Assertions.assertEquals(1, b.count(10,12);
-		}
-		public void testcount()
-		{
-			System.out.print("----TEST TWO EXECUTED----");
-			Assertions.assertEquals(2, b.count(6,8);
-		}
-	}
+		 int[][] arrayint=new int[6][2];
+		 arrayint[0][0]=0;
+		 arrayint[0][1]=4;
+		 arrayint[1][0]=1;
+		 arrayint[1][1]=1;
+		 arrayint[2][0]=2;
+		 arrayint[2][1]=1;
+		 arrayint[3][0]=3;
+		 arrayint[3][1]=2;
+		 arrayint[4][0]=5;
+		 arrayint[4][1]=4;
+		
+		 Board b = new Board(6,arrayint);
+		
+		
+	
+	 System.out.println("======TEST ONE EXECUTED=======");
+	       Assertions.assertEquals(".....\n.....\n*.....\n.....\n......\n.....",b.createBoard(8, arrayint) );
+		
+		
+	 }
+	 public void test_countLiveCells()
+	 {
+		 int[][] arrayint=new int[6][2];
+		
+		 arrayint[0][0]=0;
+		 arrayint[0][1]=4;
+		 arrayint[1][0]=1;
+		 arrayint[1][1]=1;
+		 arrayint[2][0]=2;
+		 arrayint[2][1]=1;
+		 arrayint[3][0]=3;
+		 arrayint[3][1]=2;
+		 arrayint[4][0]=5;
+		 arrayint[4][1]=4;
+		
+		 Board b = new Board(6,arrayint);
+		 System.out.println("======TEST ONE EXECUTED=======");
+	     Assertions.assertEquals(1,b.countLiveCells(4,6) );
+		
+		
+		
+		
+	 }
+	 @Test	
+	 public void  generateNextGeneration()
+	 {
+		 int[][] arrayint=new int[6][2];
+		
+		 arrayint[0][0]=0;
+		 arrayint[0][1]=4;
+		 arrayint[1][0]=1;
+		 arrayint[1][1]=1;
+		 arrayint[2][0]=2;
+		 arrayint[2][1]=1;
+		 arrayint[3][0]=3;
+		 arrayint[3][1]=2;
+		 arrayint[4][0]=5;
+		 arrayint[4][1]=4;
+		
+		 Board b = new Board(6,arrayint);
+		 System.out.println("======TEST ONE EXECUTED=======");
+	     Assertions.assertEquals(".....\n......\n......\n.....\n......\n......",b.generateNextGeneration());
+		
+	 }
 }
